@@ -4,12 +4,16 @@ const reducerFunction = (state = {counter:0}, action) =>{
     //Synchronous Function, we should not change the original state
     if(action.type==='INC'){
         return {counter: state.counter+1}
+        // return {counter: state.counter + action.payload} i got output NaN
     }
 
     if (action.type === 'Decrement'){
         return {counter: state.counter-1}
     }
-
+    if (action.type === "Add"){
+        return {counter: state.counter + action.payload}
+        // return {counter: state.counter +10}
+    }
     //the action has the type and payload^
     return state;//will return the counter THIS IS NEEDED
 }

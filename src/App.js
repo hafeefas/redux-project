@@ -17,6 +17,10 @@ function App() {
     }
     const decrement = () => {
       dispatch({type: "Decrement"})
+      //  dispatch({type: "Decrement", payload:1}) got output NaN
+    }
+    const addBy = () => {
+      dispatch({type: "Add", payload:10})
     }
 
   return (
@@ -25,6 +29,7 @@ function App() {
         <h2>{counter}</h2>
         <button onClick = {increment}>Increment</button>
         <button onClick= {decrement}> Decrement </button>
+        <button onClick = {addBy}> Add Value by 10 </button>
       </div>
     );
   }
